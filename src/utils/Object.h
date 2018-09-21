@@ -1,0 +1,73 @@
+/*
+ * Copyright 2018 Longri
+ *
+ * This program is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Lesser General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ * PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ *
+ *
+ * Created by Longri on 14.07.18.
+ */
+
+#ifndef CACHEBOX_OBJECT_H
+#define CACHEBOX_OBJECT_H
+
+
+#include "String16.h"
+#include "../MathUtils.h"
+
+class Object {
+private:
+
+protected:
+
+
+
+public:
+    const char *classname;
+    explicit Object(const char *const classname) : classname(classname) {}
+
+
+    /**
+     * Returns a string representation of the object. In general, the
+     * {@code toString} method returns a string that
+     * "textually represents" this object. The result should
+     * be a concise but informative representation that is easy for a
+     * person to read.
+     * It is recommended that all subclasses override this method.
+     * <p>
+     * The {@code toString} method for class {@code Object}
+     * returns a string consisting of the name of the class of which the
+     * object is an instance, the at-sign character `{@code @}', and
+     * the unsigned hexadecimal representation of the hash code of the
+     * object. In other words, this method returns a string equal to the
+     * value of:
+     * <blockquote>
+     * <pre>
+     * getClass().getName() + '@' + Integer.toHexString(hashCode())
+     * </pre></blockquote>
+     *
+     * @return  a string representation of the object.
+     */
+    virtual String16 toString() {
+        String16 str = String16(classname);
+        str.append("@");
+        auto ptr = reinterpret_cast<long long int>(this);
+        const char *hexString = MathUtils::getHexString(ptr);
+        str.append(hexString);
+        delete[](hexString);
+        return str;
+    }
+};
+
+
+#endif //CACHEBOX_OBJECT_H

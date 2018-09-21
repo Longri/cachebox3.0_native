@@ -1,0 +1,14 @@
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  msg:test log -> debug
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  msg:test log -> Hello 
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  msg:test log -> Hello World
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  msg:test log -> with list off four arguments 
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  String LogTest
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  String LogTest Hello 
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  String LogTest Hello World 
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  String LogTest with list off four arguments
+21-09-18 09:42:25-642 [ERROR] TestLogger -  NumberFormatException: Error with parse long
+                                            Number is malformed: 'NoNumberToParse'
+                                            E:/@Work/Gits/cachebox3.0_native/src/utils/String16.h,639
+                                            E:/@Work/Gits/cachebox3.0_native/Tests/logger/Logger_Test.cpp,127
+                                            
+21-09-18 09:42:25-642 [DEBUG] TestLogger -  msg:test log -> debug

@@ -1,0 +1,2 @@
+Write Utf8 Text '˷ꁾ' to File!
+With two lines!
